@@ -6,7 +6,7 @@ metadata:
 spec:
   waf:
     enable: true
-    apPolicy: "secops/blocking-simple-web"
+    apPolicy: "secops/blocking-simple-web-nginx"
     securityLogs:
     - enable: true
       apLogConf : "secops/logconf-simple-web-nginx"
