@@ -1,0 +1,16 @@
+ apiVersion: cis.f5.com/v1
+ kind: VirtualServer
+ metadata:
+   name: virtualserver-web-bigip
+   labels:
+     f5cr: "true"
+   namespace: simple-web-bigip
+ spec:
+   host: simple-web-bigip.de1chk1nd.aws
+   tlsProfileName: edge-tls  # --> This will attach reencrypt-tls TLSProfile
+   virtualServerAddress: "172.16.3.4"
+   httptraffic: redirect
+   pools:
+     - path: /
+       service: app-v1-bigip-svc
+       servicePort: 80
