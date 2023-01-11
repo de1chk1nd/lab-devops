@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app-v1-bigip
-  namespace: simple-web-nginx
+  namespace: simple-web-bigip
 spec:
   replicas: 2
   selector:
