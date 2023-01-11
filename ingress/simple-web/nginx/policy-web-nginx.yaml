@@ -1,1 +1,16 @@
-
+apiVersion: k8s.nginx.org/v1
+kind: Policy
+metadata:
+  name: policy-web-nginx
+  namespace: simple-web-nginx
+spec:
+  waf:
+    enable: true
+    apPolicy: "secops/blocking-simple-web"
+    securityLogs:
+    - enable: true
+      apLogConf : "secops/logconf-simple-web"
+      logDest: "syslog:server=docker.de1chk1nd.aws:515"
+    - enable: true
+      apLogConf : "secops/logconf-simple-web"
+      logDest: "syslog:server=elk.de1chk1nd.aws:5144"
