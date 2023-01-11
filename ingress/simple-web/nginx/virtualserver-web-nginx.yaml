@@ -1,0 +1,21 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: virtualserver-web-nginx
+  namespace: simple-web-nginx
+spec:
+  host: simple-web-nginx.de1chk1nd.aws
+  tls:
+    secret: simple-web-nginx-cert
+    redirect:
+      enable: true
+  policies:
+  - name: policy-web-nginx
+  upstreams:
+  - name: web-nginx
+    service: app-v1-svc
+    port: 80
+  routes:
+  - path: /
+    action:
+      pass: web-nginx
