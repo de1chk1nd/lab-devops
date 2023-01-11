@@ -9,8 +9,8 @@ spec:
     apPolicy: "secops/blocking-simple-web"
     securityLogs:
     - enable: true
-      apLogConf : "secops/logconf-simple-web"
+      apLogConf : "secops/logconf-simple-web-nginx"
       logDest: "syslog:server=docker.de1chk1nd.aws:515"
     - enable: true
-      apLogConf : "secops/logconf-simple-web"
+      apLogConf : "secops/logconf-simple-web-nginx"
       logDest: "syslog:server=elk.de1chk1nd.aws:5144"
