@@ -13,7 +13,7 @@ spec:
   - name: policy-web-nginx
   upstreams:
   - name: web-nginx
-    service: app-v1-svc
+    service: app-v1-nginx-svc
     port: 8080
   routes:
   - path: /
