@@ -6,7 +6,7 @@
      f5cr: "true"
  spec:
    tls:
-     termination: reencrypt
+     termination: edge
      clientSSL: /Common/clientssl
      reference: bigip             # --> reference profiles created in BIG-IP by User
    hosts:
