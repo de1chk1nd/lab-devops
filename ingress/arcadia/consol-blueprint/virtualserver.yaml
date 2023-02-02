@@ -1,0 +1,35 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: arcadia
+  namespace: arcadia
+spec:
+  host: arcadia.consol-blueprint.aws
+  policies:
+  - name: policy-arcadia
+  upstreams:
+  - name: main
+    service: main
+    port: 8080
+  - name: backend
+    service: backend
+    port: 8080
+  - name: app2
+    service: app2
+    port: 8080
+  - name: app3
+    service: app3
+    port: 8080
+  routes:
+  - path: /
+    action:
+      pass: main
+  - path: /files
+    action:
+      pass: backend
+  - path: /api
+    action:
+      pass: app2
+  - path: /app3
+    action:
+      pass: app3
