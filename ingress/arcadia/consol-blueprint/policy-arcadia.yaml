@@ -1,0 +1,13 @@
+apiVersion: k8s.nginx.org/v1
+kind: Policy
+metadata:
+  name: policy-arcadia
+  namespace: arcadia
+spec:
+  waf:
+    enable: true
+    apPolicy: "secops/blocking-arcadia"
+    securityLogs:
+    - enable: true
+      apLogConf : "secops/logconf-arcadia"
+      logDest: "syslog:server=docker.consol-blueprint.aws:515:515"
