@@ -10,7 +10,7 @@ spec:
     securityLogs:
     - enable: true
       apLogConf : "secops/logconf-simple-web-nginx"
-      logDest: "syslog:server=docker.de1chk1nd.aws:515"
+      logDest: "syslog:server=docker.de1chk1nd-lab.aws:515"
     - enable: true
       apLogConf : "secops/logconf-simple-web-nginx"
-      logDest: "syslog:server=elk.de1chk1nd.aws:5144"
+      logDest: "syslog:server=elk.de1chk1nd-lab.aws:5144"
