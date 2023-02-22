@@ -4,4 +4,4 @@ metadata:
   name: mesh-access-control
   labels:
     name: mesh-access-control
-	injector.nsm.nginx.com/auto-inject: enabled
+    injector.nsm.nginx.com/auto-inject: enabled
