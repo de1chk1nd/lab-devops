@@ -3,6 +3,7 @@ apiVersion: specs.smi-spec.io/v1alpha3
 kind: HTTPRouteGroup
 metadata:
   name: route-group
+  namespace: mesh-access-control
 spec:
   matches:
   - name: destination-traffic
@@ -17,6 +18,7 @@ apiVersion: access.smi-spec.io/v1alpha2
 kind: TrafficTarget
 metadata:
   name: traffic-target
+  namespace: mesh-access-control
 spec:
   destination:
     kind: ServiceAccount
