@@ -3,11 +3,13 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: destination-sa
+  namespace: mesh-access-control
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dest-svc
+  namespace: mesh-access-control
 spec:
   replicas: 1
   selector:
@@ -38,6 +40,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: dest-svc
+  namespace: mesh-access-control
 data:
   nginx.conf: |-
     events {}
@@ -54,6 +57,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: dest-svc
+  namespace: mesh-access-control
 spec:
   ports:
   - port: 8080
