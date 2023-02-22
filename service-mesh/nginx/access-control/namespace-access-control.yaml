@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mesh-access-control
+  labels:
+    name: mesh-access-control
+	injector.nsm.nginx.com/auto-inject: enabled
