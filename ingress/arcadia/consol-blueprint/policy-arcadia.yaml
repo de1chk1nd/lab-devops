@@ -10,4 +10,4 @@ spec:
     securityLogs:
     - enable: true
       apLogConf : "secops/logconf-arcadia"
-      logDest: "syslog:server=docker.consol-blueprint.aws:515"
+      logDest: "syslog:server=docker.blueprint-eu-west-1.aws:515"
