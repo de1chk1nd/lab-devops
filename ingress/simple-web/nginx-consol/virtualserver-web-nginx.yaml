@@ -4,7 +4,7 @@ metadata:
   name: virtualserver-web-nginx
   namespace: default
 spec:
-  host: simple-web-nginx.de1chk1nd-lab.aws
+  host: simple-web-nginx.consol-blueprint.aws
   tls:
     secret: simple-web-nginx-cert
     redirect:
