@@ -2,7 +2,7 @@ apiVersion: k8s.nginx.org/v1
 kind: Policy
 metadata:
   name: policy-arcadia
-  namespace: arcadia
+  namespace: default
 spec:
   waf:
     enable: true
