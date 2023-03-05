@@ -5,7 +5,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
-  namespace: arcadia
+  namespace: default
   labels:
     app: backend
     version: v1
@@ -39,7 +39,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: main
-  namespace: arcadia
+  namespace: default
   labels:
     app: main
     version: v1
@@ -73,7 +73,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app2
-  namespace: arcadia
+  namespace: default
   labels:
     app: app2
     version: v1
@@ -107,7 +107,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app3
-  namespace: arcadia
+  namespace: default
   labels:
     app: app3
     version: v1
