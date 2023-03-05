@@ -1,0 +1,16 @@
+apiVersion: k8s.nginx.org/v1
+kind: Policy
+metadata:
+  name: policy-web-nginx
+  namespace: default
+spec:
+  waf:
+    enable: true
+    apPolicy: "secops/blocking-simple-web-nginx"
+    securityLogs:
+    - enable: true
+      apLogConf : "secops/logconf-simple-web-nginx"
+      logDest: "syslog:server=docker.de1chk1nd-lab.aws:515"
+    - enable: true
+      apLogConf : "secops/logconf-simple-web-nginx"
+      logDest: "syslog:server=elk.de1chk1nd-lab.aws:5144"
