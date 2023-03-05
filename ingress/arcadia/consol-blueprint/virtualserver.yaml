@@ -10,16 +10,16 @@ spec:
   upstreams:
   - name: main
     service: main
-    port: 8080
+    port: 80
   - name: backend
     service: backend
-    port: 8080
+    port: 80
   - name: app2
     service: app2
-    port: 8080
+    port: 80
   - name: app3
     service: app3
-    port: 8080
+    port: 80
   routes:
   - path: /
     action:
