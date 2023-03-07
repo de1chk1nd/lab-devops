@@ -15,6 +15,6 @@ spec:
     port: 8080
     protocol: TCP
     targetPort: 80
-  type: Loadbalancer
+  type: LoadBalancer
   selector:
     app: app-v1-bigip
