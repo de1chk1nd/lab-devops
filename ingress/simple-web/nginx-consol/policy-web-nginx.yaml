@@ -6,8 +6,8 @@ metadata:
 spec:
   waf:
     enable: true
-    apPolicy: "secops/blocking-simple-web-nginx"
+    apPolicy: "secops/blocking-simple-web"
     securityLogs:
     - enable: true
-      apLogConf : "secops/logconf-simple-web-nginx"
+      apLogConf : "secops/logconf-arcadia"
       logDest: "syslog:server=docker.blueprint-eu-west-1.aws:515"
