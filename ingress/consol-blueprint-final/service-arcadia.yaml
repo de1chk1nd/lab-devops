@@ -1,0 +1,75 @@
+##################################################################################################
+# FILES - BACKEND
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: workshop-int
+  labels:
+    app: backend
+    service: backend
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    app: backend
+---
+##################################################################################################
+# MAIN
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: main
+  namespace: workshop-int
+  labels:
+    app: main
+    service: main
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    app: main
+---
+##################################################################################################
+# APP2
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: app2
+  namespace: workshop-int
+  labels:
+    app: app2
+    service: app2
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    app: app2
+---
+##################################################################################################
+# APP3
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: app3
+  namespace: workshop-int
+  labels:
+    app: app3
+    service: app3
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    app: app3
