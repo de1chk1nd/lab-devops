@@ -1,0 +1,137 @@
+##################################################################################################
+# FILES - BACKEND
+##################################################################################################
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: workshop-int
+  labels:
+    app: backend
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: backend
+        version: v1
+    spec:
+      containers:
+      - env:
+        - name: service_name
+          value: backend
+        image: registry.gitlab.com/arcadia-application-for-volterra/back-end-volterra/backend:latest
+        imagePullPolicy: IfNotPresent
+        name: backend
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+---
+##################################################################################################
+# MAIN
+##################################################################################################
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: main
+  namespace: workshop-int
+  labels:
+    app: main
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: main
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: main
+        version: v1
+    spec:
+      containers:
+      - env:
+        - name: service_name
+          value: main
+        image: quay-quay-quay.apps.openshift.blueprint-eu-west-1.aws/quayadmin/main:latest
+        imagePullPolicy: Always
+        name: main
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+      imagePullSecrets:
+      - name: regcred
+---
+##################################################################################################
+# APP2
+##################################################################################################
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app2
+  namespace: workshop-int
+  labels:
+    app: app2
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app2
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: app2
+        version: v1
+    spec:
+      containers:
+      - env:
+        - name: service_name
+          value: app2
+        image: registry.gitlab.com/arcadia-application-for-volterra/app2-volterra:latest
+        imagePullPolicy: IfNotPresent
+        name: app2
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+---
+##################################################################################################
+# APP3
+##################################################################################################
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app3
+  namespace: workshop-int
+  labels:
+    app: app3
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app3
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: app3
+        version: v1
+    spec:
+      containers:
+      - env:
+        - name: service_name
+          value: app3
+        image: registry.gitlab.com/arcadia-application-for-volterra/app3-volterra:latest
+        imagePullPolicy: IfNotPresent
+        name: app3
+        ports:
+        - containerPort: 8080
+          protocol: TCP
