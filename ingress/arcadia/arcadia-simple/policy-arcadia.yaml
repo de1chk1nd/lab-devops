@@ -9,5 +9,8 @@ spec:
     apPolicy: "secops/blocking-arcadia"
     securityLogs:
     - enable: true
-      apLogConf : "secops/logconf-arcadia"
-      logDest: "syslog:server=docker.blueprint-eu-west-1.aws:515"
+      apLogConf : "secops/logconf-simple-web-nginx"
+      logDest: "syslog:server=docker.de1chk1nd-lab.aws:515"
+    - enable: true
+      apLogConf : "secops/logconf-simple-web-nginx"
+      logDest: "syslog:server=elk.de1chk1nd-lab.aws:5144"
