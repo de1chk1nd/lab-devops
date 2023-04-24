@@ -5,6 +5,10 @@ metadata:
   namespace: arcadia-simple-nginx
 spec:
   host: arcadia.de1chk1nd-lab.aws
+  tls:
+    secret: arcadia-nginx-cert
+    redirect:
+      enable: true
   policies:
   - name: policy-arcadia
   upstreams:
